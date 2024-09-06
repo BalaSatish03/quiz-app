@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            overflow: hidden;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            height: 300px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center the content vertically */
+            align-items: center; /* Center the content horizontally */
+            position: relative; /* Position relative for the absolute positioning of text */
+        }
+
+        #scroll-text {
+            margin-bottom: 10px;
+            margin-left: 15px;
+            color: navy;
+        }
+
+        button {
+            background-color: aqua;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            }
+
+        button:hover {
+            background-color: #5e5f60;
+            color: white; /* Change text color on hover for better contrast */
+        }
+
+        #quiz{
+            margin-top: 50px;
+            margin-bottom: 50px;
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="scroll-text">Welcome to pi crypto quiz</h2>
+        <button type="submit" id="quiz" onclick="openquiz()">Take Quiz</button>
+        <button type="submit" id="score" onclick="viewscore()"> View Score</button>
+        <h1 id="view-score"></h1>
+
+        <button type="button" id="logout" onclick="logout()">Logout</button>
+    </div>
+<script>
+    function openquiz(){
+        window.location.href = "quiz.html";
+    }
+ async  function viewscore(){
+    const response=await fetch('/view-score');
+    if(response.status==200){
+        const myscore=await response.json();
+        document.getElementById('score').innerHTML=myscore;
+
+    }
+    else{
+        alert('score not found');
+    }
+
+    }
+  async function logout(){
+    const response=await fetch('/logout',{method:'GET'})
+    if(response.status==200){
+        window.location.href='index.html';
+     }
+    else{
+        console.error('logout failed');
+    }
+  }
+
+
+
+</script>
+
+</body>
+</html>

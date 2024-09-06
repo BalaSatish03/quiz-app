@@ -1,0 +1,19 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "description": "quiz app on the server",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bala",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongodb": "^4.1.0"
+  }
+}

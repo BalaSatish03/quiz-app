@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: quiz-backend
+    ports:
+      - "3000:3000"  # Map container port 3000 to host port 3000
+    depends_on:
+      - mongodb
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/quiz-app-db  # MongoDB connection string
+    volumes:
+      - .:/app  # Sync local files with the container
+
+  mongodb:
+    image: mongo:4.4
+    container_name: quiz-mongodb
+    ports:
+      - "27017:27017"  # Expose MongoDB port
+    volumes:
+      - mongo-data:/data/db  # Persist MongoDB data
+
+volumes:
+  mongo-data:

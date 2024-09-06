@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    color: rgb(5, 239, 28);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+ .flex-container{
+    background-color: #675f64;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    height: 300px;
+}
+#submit{
+    color: red;
+}
+#Next{
+    color:red
+}
+button{
+    align-items: center;
+    background-color:aqua ;
+    padding: 5px;
+    border-radius: 10%;
+}
+.div2{
+    justify-content: center;
+    padding: 5px 100px;
+    
+}
+.div3{
+    justify-content:center;
+    padding: 70px 40px;
+    display:none;
+    font-style: normal;
+    
+}
+#f1_score{
+    background-color: red;
+}
+button:hover{
+    background-color:gainsboro ;
+}
+.div4{
+    justify-content:center;
+    padding: 70px 40px;
+    display:none;
+    font-style: normal;}
+#home{
+    margin-top: -70px;
+    margin-bottom: -50px;
+    margin-left: 100px;
+}
+
+
+
