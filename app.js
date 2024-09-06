@@ -5,7 +5,7 @@ import session from 'express-session';
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const port = 3000;
 const uri = process.env.MONGODB_URL ||"mongodb://localhost:27017";
 const client = new MongoClient(uri);
 
